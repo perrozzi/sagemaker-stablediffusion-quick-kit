@@ -1,9 +1,15 @@
 FROM public.ecr.aws/o7x6j3x6/sd-dreambooth-finetuning-v2
 
 
-RUN pip install --no-cache-dir fastapi uvicorn sagemaker
-RUN pip install --no-cache-dir diffusers==0.19.3 accelerate==0.17.0 controlnet-aux==0.0.6 boto3 transformers==4.30.1
-
+RUN pip install --no-cache-dir fastapi 
+RUN pip install --no-cache-dir uvicorn 
+RUN pip install --no-cache-dir boto3 
+RUN pip install --no-cache-dir sagemaker
+RUN pip install --no-cache-dir diffusers==0.22.0
+RUN pip install --no-cache-dir accelerate==0.17.0 
+RUN pip install --no-cache-dir controlnet-aux==0.0.6 
+RUN pip install --no-cache-dir transformers==4.30.1
+RUN pip install --no-cache-dir huggingface_hub==0.25.0
 
 
 RUN curl -L https://github.com/peak/s5cmd/releases/download/v2.0.0/s5cmd_2.0.0_Linux-64bit.tar.gz | tar -xz && mv s5cmd /opt/conda/bin/
